@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Page</title>
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="">
-        <nav>
-            <button id="home-but">Home</button>
-            <button id="menu-but">Menu</button>
-            <button id="about-but">About</button>
-        </nav>
-    </header>
-    <div id="content">
-        <h2>Menu</h2>
+import kebabImage from "./durumKebab.jpg"
+import pinchoImage from "./pinchoCarne.jpg"
+import falafelImage from "./falafelCombo.jpg"
+
+
+
+export const menu = () => {
+    const content = document.querySelector('#content')
+    content.innerHTML = `
+    <h2>Menu</h2>
         <div class="dish">
-            <img class="dish-foto" src="durumKebab.jpg" alt="">
+            <img class="dish-foto pic" src="durumKebab.jpg" alt="">
             <div class="dish-info">
                 <h3>Durum Kebab</h3>
                 <p>Enjoy a traditional dürüm kebab, filled with chicken, beef or both, accompanied with suculent vegetables at personal choice and tasteful sauce.</p>
@@ -25,7 +17,7 @@
             </div>
         </div>
         <div class="dish">
-            <img class="dish-foto" src="pinchoCarne.jpg" alt="">
+            <img class="dish-foto pic1" src="pinchoCarne.jpg" alt="">
             <div class="dish-info">
                 <h3>Pinchos</h3>
                 <p>A delicious skewer prepared with seasoned meat and freshly colected vegetables. Also a selection of sauces at your disposal (Please ask the waiter).</p>
@@ -33,7 +25,7 @@
             </div>
         </div>
         <div class="dish">
-            <img class="dish-foto" src="falafelCombo.jpg" alt="">
+            <img class="dish-foto pic2" src="falafelCombo.jpg" alt="">
             <div class="dish-info">
                 <h3>Falafel Combo</h3>
                 <p>The star dish of 'Cal Magrebí'. Combination of our most fresh vegetables (depending on season) and a delicious homemade falafel accompanied by our secret special sauce.</p>
@@ -44,6 +36,12 @@
             <h3>Make It A Menu!</h3>
             <p>Pay 3€ more for each dish to include a small serving of fries and a drink!</p>
         </div>
-    </div>
-</body>
-</html>
+    `
+    const image1 = document.querySelector(".pic");
+    const image2 = document.querySelector(".pic1");
+    const image3 = document.querySelector(".pic2");
+    image1.src = kebabImage;
+    image2.src = pinchoImage;
+    image3.src = falafelImage;
+    
+}

@@ -1,4 +1,5 @@
 import { about } from "./about";
+import { menu } from "./menu";
 import "./styles.css";
 
 
@@ -73,6 +74,10 @@ function setPageState(newState) {
         about();
     }
 
+    if(newState === "Menu"){
+        menu();
+    }
+
     pageState = newState; 
 }
 
@@ -87,6 +92,13 @@ if (homeButton) {
 const aboutButton = document.querySelector("#about-but"); 
 if (aboutButton) {
     aboutButton.addEventListener('click', () => setPageState("About"));
+} else {
+    console.error("Home button not found in the DOM");
+}
+
+const menuButton = document.querySelector("#menu-but"); 
+if (menuButton) {
+    menuButton.addEventListener('click', () => setPageState("Menu"));
 } else {
     console.error("Home button not found in the DOM");
 }
